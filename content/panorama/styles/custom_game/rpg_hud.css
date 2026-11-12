@@ -1,0 +1,114 @@
+.RpgRoot { width: 100%; height: 100%; }
+.Hidden { visibility: collapse; }
+
+#WaveBox {
+	horizontal-align: center; vertical-align: top;
+	margin-top: 64px; padding: 10px 30px 10px 30px; min-width: 380px;
+	flow-children: down;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#101a2ccc), to(#05080fe6));
+	border: 2px solid #3d5a8a; border-radius: 10px;
+	box-shadow: 0px 0px 14px 2px #00000099;
+	transition-property: border, background-color; transition-duration: 0.4s;
+}
+#WaveBox.Boss { border: 2px solid #ff3d3d; background-color: gradient(linear, 0% 0%, 0% 100%, from(#3a0d0dcc), to(#120404e6)); }
+#WaveBox.Break { border: 2px solid #3d8a5a; }
+
+#WaveHeader { horizontal-align: center; flow-children: right; }
+#WaveCaption { font-size: 15px; color: #8fa8d0; font-weight: bold; vertical-align: bottom; margin-right: 10px; margin-bottom: 4px; letter-spacing: 2px; }
+#WaveNum { font-size: 40px; color: #ffffff; font-weight: bold; text-shadow: 0px 0px 6px 2.0 #000000; }
+#WaveFinal { font-size: 20px; color: #7f8fa8; vertical-align: bottom; margin-left: 6px; margin-bottom: 6px; }
+#WaveTag { font-size: 16px; color: #ffd24a; vertical-align: center; margin-left: 14px; padding: 2px 10px; background-color: #00000088; border-radius: 6px; }
+#WaveBox.Boss #WaveTag { color: #ff8a8a; }
+#WaveBox.Boss #WaveNum { color: #ff6a6a; }
+#WaveBox.Break #WaveNum { color: #9dffbb; }
+
+#WaveInfo { font-size: 20px; color: #ffd24a; horizontal-align: center; margin-top: 2px; margin-bottom: 6px; }
+#WaveBox.Break #WaveInfo { color: #9dffbb; }
+
+#BarBg { width: 100%; height: 12px; margin-top: 2px; background-color: #00000099; border-radius: 6px; border: 1px solid #1d2a44; }
+#BarFill { width: 0%; height: 100%; border-radius: 6px; background-color: gradient(linear, 0% 0%, 100% 0%, from(#ffb22e), to(#ff5a2e)); transition-property: width; transition-duration: 0.35s; }
+#WaveBox.Boss #BarFill { background-color: gradient(linear, 0% 0%, 100% 0%, from(#ff3d3d), to(#a00000)); }
+#WaveBox.Break #BarFill { background-color: gradient(linear, 0% 0%, 100% 0%, from(#4aff8a), to(#1ea05a)); }
+
+#GameBarBg { width: 100%; height: 4px; margin-top: 6px; background-color: #00000099; border-radius: 2px; }
+#GameBarFill { width: 0%; height: 100%; border-radius: 2px; background-color: #6aa8ff; transition-property: width; transition-duration: 0.5s; }
+
+#WaveFooter { width: 100%; margin-top: 8px; flow-children: right; }
+#LivesCaption { font-size: 14px; color: #ff9a9a; vertical-align: center; margin-right: 8px; letter-spacing: 1px; }
+#LivesRow { flow-children: right; vertical-align: center; }
+.Life { width: 16px; height: 16px; margin: 0px 3px; border-radius: 8px; background-color: gradient(linear, 0% 0%, 0% 100%, from(#ff6a6a), to(#c01818)); border: 1px solid #ffb0b0; }
+.Life.LifeLost { background-color: #2a2a2a; border: 1px solid #555555; }
+#NextBoss { font-size: 14px; color: #8fa8d0; horizontal-align: right; vertical-align: center; margin-left: 24px; }
+#NextWaveButton { horizontal-align: center; margin-top: 8px; padding: 6px 16px; background-color: #28613d; border: 1px solid #7dff9a; border-radius: 4px; }
+#NextWaveButton:hover { background-color: #368554; }
+#NextWaveButton Label { color: white; font-size: 16px; font-weight: bold; }
+
+#TalentTabButton { horizontal-align: right; vertical-align: top; margin-top: 130px; margin-right: 12px; padding: 6px 16px; background-color: #2a3b55; border: 1px solid #8fd3ff; border-radius: 4px; }
+#TalentTabButton:hover { background-color: #3d5680; }
+#TalentTabButton Label { color: white; font-size: 16px; font-weight: bold; }
+#TalentBox { horizontal-align: right; vertical-align: top; margin-top: 170px; margin-right: 12px; width: 430px; height: 78%; padding: 10px; flow-children: down; background-color: #000000dd; border-radius: 8px; }
+#TalentTitle { color: #8fd3ff; font-size: 22px; font-weight: bold; horizontal-align: center; margin-bottom: 5px; }
+#TalentScroll { width: 100%; height: 72%; overflow: squish scroll; }
+#TalentCards { width: 100%; flow-children: down; }
+.TalentRow { width: 100%; margin-top: 5px; flow-children: down; }
+.TalentLevel { color: #ffd24a; font-size: 15px; margin-bottom: 2px; }
+.TalentCard { width: 100%; min-height: 32px; margin: 2px 0px; padding: 5px; background-color: #263750; border: 1px solid #566d8a; border-radius: 4px; }
+.TalentCard:hover { background-color: #38527a; }
+.TalentCard Label { color: #e8efff; font-size: 14px; white-space: normal; }
+.TalentCard.TalentSelected { border: 1px solid #7dff9a; background-color: #244331; }
+.TalentCard.TalentUnavailable { opacity: 0.45; }
+#PointsLabel { font-size: 18px; color: #7dff9a; margin-top: 8px; margin-bottom: 5px; }
+.StatRow { flow-children: down; }
+.StatBtn {
+	margin: 2px 0px; padding: 4px 14px;
+	background-color: #2a3b55; border-radius: 4px;
+}
+.StatBtn:hover { background-color: #3d5680; }
+.StatBtn Label { font-size: 16px; color: #ffffff; }
+
+#PerkBox {
+	horizontal-align: center; vertical-align: center;
+	flow-children: down; padding: 16px;
+	background-color: #000000dd; border-radius: 10px;
+}
+#PerkTitle { font-size: 28px; color: #ffffff; horizontal-align: center; margin-bottom: 12px; }
+#PerkCards { flow-children: right; }
+.PerkCard {
+	width: 220px; margin: 0px 8px; padding: 14px;
+	flow-children: down;
+	background-color: #1c2740; border: 2px solid #4a90e2; border-radius: 8px;
+}
+.PerkCard:hover { background-color: #2c3d63; border: 2px solid #ffd24a; }
+.PerkName  { font-size: 22px; color: #ffd24a; font-weight: bold; margin-bottom: 6px; }
+.PerkDesc  { font-size: 17px; color: #e0e0e0; width: 100%; text-overflow: shrink; white-space: normal; }
+.PerkCount { font-size: 14px; color: #8fd3ff; margin-top: 8px; }
+
+#ToastBox {
+	horizontal-align: center; vertical-align: bottom;
+	margin-bottom: 260px; flow-children: down;
+}
+.Toast { font-size: 20px; color: #ffffff; horizontal-align: center; text-shadow: 0px 0px 4px 3.0 #000000; margin-top: 2px; }
+
+/* Редкости перков */
+.PerkCard.Rarity1 { border: 2px solid #b8b8b8; }
+.PerkCard.Rarity2 { border: 2px solid #4a90e2; }
+.PerkCard.Rarity3 { border: 2px solid #b050e0; }
+.PerkCard.Rarity4 { border: 2px solid #ff9a1e; }
+.PerkCard.Rarity5 { border: 3px solid #ff3d6e; background-color: #2a1428; }
+.PerkCard:hover { background-color: #2c3d63; }
+.PerkRarity { font-size: 14px; font-weight: bold; margin-bottom: 2px; }
+.PerkBuild  { font-size: 15px; color: #ff9fb8; margin-bottom: 4px; }
+
+/* Панель «Снаряжение» */
+#GearBox {
+	horizontal-align: left; vertical-align: top;
+	margin-top: 130px; margin-left: 12px; padding: 8px 10px;
+	width: 300px; flow-children: down;
+	background-color: #000000b0; border-radius: 8px;
+}
+#GearTitle, #TotalsTitle { font-size: 18px; color: #ffffff; font-weight: bold; margin-bottom: 4px; }
+#TotalsTitle { margin-top: 8px; color: #7dff9a; }
+#GearList, #TotalsList { flow-children: down; width: 100%; }
+.GearName  { font-size: 16px; font-weight: bold; margin-top: 4px; }
+.GearLines { font-size: 13px; color: #d8d8d8; width: 100%; text-overflow: shrink; white-space: normal; }
+.TotalLine { font-size: 14px; color: #e8f5e8; }

@@ -1,0 +1,8 @@
+"AddonInfo"
+{
+	"level1"
+	{
+		"MaxPlayers"	"4"
+		"map"			"arena"
+	}
+}

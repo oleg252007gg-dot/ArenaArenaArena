@@ -1,0 +1,104 @@
+"DOTAHeroes"
+{
+	// Axe с переработанными способностями (см. vscripts/abilities/rpg_axe.lua)
+	"npc_dota_hero_axe"
+	{
+		"override_hero"		"npc_dota_hero_axe"
+		"Ability1"		"rpg_axe_berserkers_call"
+		"Ability2"		"rpg_axe_battle_hunger"
+		"Ability3"		"rpg_axe_counter_helix"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"rpg_axe_culling_blade"
+		"Ability10"		"generic_hidden"
+		"Ability11"		"generic_hidden"
+		"Ability12"		"generic_hidden"
+		"Ability13"		"generic_hidden"
+		"Ability14"		"generic_hidden"
+		"Ability15"		"generic_hidden"
+		"Ability16"		"generic_hidden"
+		"Ability17"		"generic_hidden"
+
+		// Таланты выбираются в отдельной вкладке игры.
+	}
+
+	// Lich: переработанные способности (см. vscripts/abilities/rpg_lich.lua)
+	"npc_dota_hero_lich"
+	{
+		"override_hero"		"npc_dota_hero_lich"
+		"Ability1"		"rpg_lich_frost_blast"
+		"Ability2"		"rpg_lich_frost_shield"
+		"Ability3"		"rpg_lich_sinister_gaze"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"rpg_lich_chain_frost"
+		"Ability10"		"generic_hidden"
+		"Ability11"		"generic_hidden"
+		"Ability12"		"generic_hidden"
+		"Ability13"		"generic_hidden"
+		"Ability14"		"generic_hidden"
+		"Ability15"		"generic_hidden"
+		"Ability16"		"generic_hidden"
+		"Ability17"		"generic_hidden"
+
+		// Таланты выбираются в отдельной вкладке игры.
+	}
+
+	// Hoodwink with custom Acorn Shot, Bushwhack, Scurry and Sharpshooter.
+	"npc_dota_hero_hoodwink"
+	{
+		"override_hero"		"npc_dota_hero_hoodwink"
+		"Ability1"		"rpg_hoodwink_acorn_shot"
+		"Ability2"		"rpg_hoodwink_bushwhack"
+		"Ability3"		"rpg_hoodwink_scurry"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"rpg_hoodwink_sharpshooter"
+		"Ability10"		"generic_hidden"
+		"Ability11"		"generic_hidden"
+		"Ability12"		"generic_hidden"
+		"Ability13"		"generic_hidden"
+		"Ability14"		"generic_hidden"
+		"Ability15"		"generic_hidden"
+		"Ability16"		"generic_hidden"
+		"Ability17"		"rpg_hoodwink_sharpshooter_devil"
+	}
+
+	"npc_dota_hero_arc_warden"
+	{
+		"override_hero" "npc_dota_hero_arc_warden"
+		"Ability1" "rpg_arc_warden_flux"
+		"Ability2" "rpg_arc_warden_magnetic_field"
+		"Ability3" "rpg_arc_warden_spark_wraith"
+		"Ability4" "generic_hidden"
+		"Ability5" "generic_hidden"
+		"Ability6" "rpg_arc_warden_tempest_double"
+		"Ability10" "generic_hidden"
+		"Ability11" "generic_hidden"
+		"Ability12" "generic_hidden"
+		"Ability13" "generic_hidden"
+		"Ability14" "generic_hidden"
+		"Ability15" "generic_hidden"
+		"Ability16" "generic_hidden"
+		"Ability17" "generic_hidden"
+	}
+
+	"npc_dota_hero_sven"
+	{
+		"override_hero" "npc_dota_hero_sven"
+		"Ability1" "rpg_sven_storm_hammer"
+		"Ability2" "rpg_sven_great_cleave"
+		"Ability3" "rpg_sven_warcry"
+		"Ability4" "generic_hidden"
+		"Ability5" "generic_hidden"
+		"Ability6" "rpg_sven_gods_strength"
+		"Ability10" "generic_hidden"
+		"Ability11" "generic_hidden"
+		"Ability12" "generic_hidden"
+		"Ability13" "generic_hidden"
+		"Ability14" "generic_hidden"
+		"Ability15" "generic_hidden"
+		"Ability16" "generic_hidden"
+		"Ability17" "generic_hidden"
+	}
+}

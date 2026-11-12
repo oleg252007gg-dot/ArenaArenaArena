@@ -1,0 +1,53 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/rpg_hud.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/rpg_hud.js" />
+	</scripts>
+	<Panel class="RpgRoot" hittest="false">
+		<Panel id="WaveBox" class="Hidden" hittest="false">
+			<Panel id="WaveHeader" hittest="false">
+				<Label id="WaveCaption" text="ВОЛНА" />
+				<Label id="WaveNum" text="1" />
+				<Label id="WaveFinal" text="/ 100" />
+				<Label id="WaveTag" class="Hidden" text="" />
+			</Panel>
+			<Label id="WaveInfo" text="" />
+			<Panel id="BarBg" hittest="false"><Panel id="BarFill" hittest="false" /></Panel>
+			<Panel id="GameBarBg" hittest="false"><Panel id="GameBarFill" hittest="false" /></Panel>
+			<Panel id="WaveFooter" hittest="false">
+				<Label id="LivesCaption" text="ЖИЗНИ" />
+				<Panel id="LivesRow" hittest="false" />
+				<Label id="NextBoss" text="" />
+			</Panel>
+			<Button id="NextWaveButton" class="Hidden" onactivate="NextWave()"><Label text="Следующий раунд" /></Button>
+		</Panel>
+
+		<Button id="TalentTabButton" onactivate="ToggleTalents()"><Label text="Таланты" /></Button>
+		<Panel id="TalentBox" class="Hidden" hittest="true">
+			<Label id="TalentTitle" text="Таланты героя" />
+			<Panel id="TalentScroll"><Panel id="TalentCards" /></Panel>
+			<Label id="PointsLabel" text="Очки атрибутов: 0" />
+			<Panel class="StatRow">
+				<Button class="StatBtn" onactivate="Spend('str')"><Label id="StrLabel" text="+ Сила" /></Button>
+				<Button class="StatBtn" onactivate="Spend('agi')"><Label id="AgiLabel" text="+ Ловкость" /></Button>
+				<Button class="StatBtn" onactivate="Spend('int')"><Label id="IntLabel" text="+ Интеллект" /></Button>
+			</Panel>
+		</Panel>
+
+		<Panel id="GearBox" hittest="false">
+			<Label id="GearTitle" text="Снаряжение" />
+			<Panel id="GearList" hittest="false" />
+			<Label id="TotalsTitle" text="Все бонусы" />
+			<Panel id="TotalsList" hittest="false" />
+		</Panel>
+
+		<Panel id="PerkBox" class="Hidden">
+			<Label id="PerkTitle" text="Выберите улучшение" />
+			<Panel id="PerkCards" />
+		</Panel>
+
+		<Panel id="ToastBox" hittest="false" />
+	</Panel>
+</root>
