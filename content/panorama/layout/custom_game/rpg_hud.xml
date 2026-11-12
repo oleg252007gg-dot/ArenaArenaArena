@@ -24,28 +24,81 @@
 			<Button id="NextWaveButton" class="Hidden" onactivate="NextWave()"><Label text="Следующий раунд" /></Button>
 		</Panel>
 
-		<Button id="TalentTabButton" onactivate="ToggleTalents()"><Label text="Таланты" /></Button>
-		<Panel id="TalentBox" class="Hidden" hittest="true">
-			<Label id="TalentTitle" text="Таланты героя" />
-			<Panel id="TalentScroll"><Panel id="TalentCards" /></Panel>
-			<Label id="PointsLabel" text="Очки атрибутов: 0" />
-			<Panel class="StatRow">
-				<Button class="StatBtn" onactivate="Spend('str')"><Label id="StrLabel" text="+ Сила" /></Button>
-				<Button class="StatBtn" onactivate="Spend('agi')"><Label id="AgiLabel" text="+ Ловкость" /></Button>
-				<Button class="StatBtn" onactivate="Spend('int')"><Label id="IntLabel" text="+ Интеллект" /></Button>
+		<Panel id="HeroSidebar" hittest="true">
+			<Panel id="HeroHeader">
+				<Panel id="HeroPortrait" />
+				<Panel id="HeroMeta">
+					<Label id="HeroName" text="Hero" />
+					<Label id="HeroClass" text="Frontliner" />
+					<Label id="HeroLevel" text="Уровень 1" />
+				</Panel>
+			</Panel>
+			<Panel id="SidebarTabs">
+				<Button class="TabBtn active" onactivate="ActivateSidebarTab('stats')"><Label text="Характеристики" /></Button>
+				<Button class="TabBtn" onactivate="ActivateSidebarTab('talents')"><Label text="Таланты" /></Button>
+				<Button class="TabBtn" onactivate="ActivateSidebarTab('perks')"><Label text="Перки" /></Button>
+				<Button class="TabBtn" onactivate="ActivateSidebarTab('gear')"><Label text="Снаряжение" /></Button>
+			</Panel>
+
+			<Panel id="HeroPanels">
+				<Panel id="StatsPanel" class="SidebarPanel active">
+					<Label class="SectionTitle" text="Характеристики" />
+					<Panel id="StatGrid">
+						<Panel class="StatCard">
+							<Label class="StatName" text="Урон" />
+							<Panel class="StatBar"><Panel class="StatFill damage" /></Panel>
+							<Label class="StatValue" text="0" />
+						</Panel>
+						<Panel class="StatCard">
+							<Label class="StatName" text="Скорость" />
+							<Panel class="StatBar"><Panel class="StatFill speed" /></Panel>
+							<Label class="StatValue" text="0" />
+						</Panel>
+						<Panel class="StatCard">
+							<Label class="StatName" text="Атака" />
+							<Panel class="StatBar"><Panel class="StatFill attack" /></Panel>
+							<Label class="StatValue" text="0" />
+						</Panel>
+						<Panel class="StatCard">
+							<Label class="StatName" text="HP" />
+							<Panel class="StatBar"><Panel class="StatFill hp" /></Panel>
+							<Label class="StatValue" text="0" />
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel id="TalentPanel" class="SidebarPanel">
+					<Label class="SectionTitle" text="Таланты" />
+					<Panel id="TalentScroll"><Panel id="TalentCards" /></Panel>
+					<Label id="PointsLabel" text="Очки атрибутов: 0" />
+					<Panel class="StatRow">
+						<Button class="StatBtn" onactivate="Spend('str')"><Label id="StrLabel" text="+ Сила" /></Button>
+						<Button class="StatBtn" onactivate="Spend('agi')"><Label id="AgiLabel" text="+ Ловкость" /></Button>
+						<Button class="StatBtn" onactivate="Spend('int')"><Label id="IntLabel" text="+ Интеллект" /></Button>
+					</Panel>
+				</Panel>
+
+				<Panel id="PerkPanel" class="SidebarPanel">
+					<Label class="SectionTitle" text="Перки" />
+					<Panel id="PerkCards" />
+				</Panel>
+
+				<Panel id="GearPanel" class="SidebarPanel">
+					<Label class="SectionTitle" text="Снаряжение" />
+					<Panel id="GearList" hittest="false" />
+					<Label id="TotalsTitle" text="Все бонусы" />
+					<Panel id="TotalsList" hittest="false" />
+				</Panel>
 			</Panel>
 		</Panel>
 
-		<Panel id="GearBox" hittest="false">
-			<Label id="GearTitle" text="Снаряжение" />
-			<Panel id="GearList" hittest="false" />
-			<Label id="TotalsTitle" text="Все бонусы" />
-			<Panel id="TotalsList" hittest="false" />
-		</Panel>
-
-		<Panel id="PerkBox" class="Hidden">
-			<Label id="PerkTitle" text="Выберите улучшение" />
-			<Panel id="PerkCards" />
+		<Panel id="QuickPanel" hittest="true">
+			<Label id="QuickTitle" text="Быстрый статус" />
+			<Panel id="QuickStats">
+				<Panel class="QuickMetric"><Label class="QuickMetricLabel" text="Волна" /><Label id="QuickWave" class="QuickMetricValue" text="0" /></Panel>
+				<Panel class="QuickMetric"><Label class="QuickMetricLabel" text="Босс" /><Label id="QuickBoss" class="QuickMetricValue" text="—" /></Panel>
+				<Panel class="QuickMetric"><Label class="QuickMetricLabel" text="Ликвидация" /><Label id="QuickKills" class="QuickMetricValue" text="0" /></Panel>
+			</Panel>
 		</Panel>
 
 		<Panel id="ToastBox" hittest="false" />
