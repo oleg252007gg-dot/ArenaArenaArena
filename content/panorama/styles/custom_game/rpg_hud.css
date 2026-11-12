@@ -1,114 +1,698 @@
-.RpgRoot { width: 100%; height: 100%; }
-.Hidden { visibility: collapse; }
+.RpgRoot {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    overflow: clip;
+}
+
+.Hidden {
+    visibility: collapse;
+}
 
 #WaveBox {
-	horizontal-align: center; vertical-align: top;
-	margin-top: 64px; padding: 10px 30px 10px 30px; min-width: 380px;
-	flow-children: down;
-	background-color: gradient(linear, 0% 0%, 0% 100%, from(#101a2ccc), to(#05080fe6));
-	border: 2px solid #3d5a8a; border-radius: 10px;
-	box-shadow: 0px 0px 14px 2px #00000099;
-	transition-property: border, background-color; transition-duration: 0.4s;
+    horizontal-align: center;
+    vertical-align: top;
+    margin-top: 48px;
+    min-width: 440px;
+    padding: 14px 22px 16px 22px;
+    flow-children: down;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#0c1422ee), to(#050914ee));
+    border: 1px solid rgba(119, 170, 255, 0.32);
+    border-radius: 16px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 10px 28px 0 rgba(0,0,0,0.6);
+    transition-property: border, box-shadow, background-color;
+    transition-duration: 0.25s;
 }
-#WaveBox.Boss { border: 2px solid #ff3d3d; background-color: gradient(linear, 0% 0%, 0% 100%, from(#3a0d0dcc), to(#120404e6)); }
-#WaveBox.Break { border: 2px solid #3d8a5a; }
 
-#WaveHeader { horizontal-align: center; flow-children: right; }
-#WaveCaption { font-size: 15px; color: #8fa8d0; font-weight: bold; vertical-align: bottom; margin-right: 10px; margin-bottom: 4px; letter-spacing: 2px; }
-#WaveNum { font-size: 40px; color: #ffffff; font-weight: bold; text-shadow: 0px 0px 6px 2.0 #000000; }
-#WaveFinal { font-size: 20px; color: #7f8fa8; vertical-align: bottom; margin-left: 6px; margin-bottom: 6px; }
-#WaveTag { font-size: 16px; color: #ffd24a; vertical-align: center; margin-left: 14px; padding: 2px 10px; background-color: #00000088; border-radius: 6px; }
-#WaveBox.Boss #WaveTag { color: #ff8a8a; }
-#WaveBox.Boss #WaveNum { color: #ff6a6a; }
-#WaveBox.Break #WaveNum { color: #9dffbb; }
+#WaveBox.Boss {
+    border: 1px solid rgba(255, 120, 120, 0.65);
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#2b0f16f5), to(#0b090ef3));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 0 28px rgba(255, 72, 72, 0.25);
+}
 
-#WaveInfo { font-size: 20px; color: #ffd24a; horizontal-align: center; margin-top: 2px; margin-bottom: 6px; }
-#WaveBox.Break #WaveInfo { color: #9dffbb; }
+#WaveBox.Break {
+    border: 1px solid rgba(123, 211, 168, 0.45);
+}
 
-#BarBg { width: 100%; height: 12px; margin-top: 2px; background-color: #00000099; border-radius: 6px; border: 1px solid #1d2a44; }
-#BarFill { width: 0%; height: 100%; border-radius: 6px; background-color: gradient(linear, 0% 0%, 100% 0%, from(#ffb22e), to(#ff5a2e)); transition-property: width; transition-duration: 0.35s; }
-#WaveBox.Boss #BarFill { background-color: gradient(linear, 0% 0%, 100% 0%, from(#ff3d3d), to(#a00000)); }
-#WaveBox.Break #BarFill { background-color: gradient(linear, 0% 0%, 100% 0%, from(#4aff8a), to(#1ea05a)); }
+#WaveHeader {
+    width: 100%;
+    horizontal-align: center;
+    flow-children: right;
+    vertical-align: center;
+}
 
-#GameBarBg { width: 100%; height: 4px; margin-top: 6px; background-color: #00000099; border-radius: 2px; }
-#GameBarFill { width: 0%; height: 100%; border-radius: 2px; background-color: #6aa8ff; transition-property: width; transition-duration: 0.5s; }
+#WaveCaption {
+    font-family: 'Gibson', 'Arial';
+    font-size: 13px;
+    color: #85aaf9;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-right: 12px;
+    vertical-align: bottom;
+    text-shadow: 0 0 16px rgba(115, 151, 255, 0.4);
+}
 
-#WaveFooter { width: 100%; margin-top: 8px; flow-children: right; }
-#LivesCaption { font-size: 14px; color: #ff9a9a; vertical-align: center; margin-right: 8px; letter-spacing: 1px; }
-#LivesRow { flow-children: right; vertical-align: center; }
-.Life { width: 16px; height: 16px; margin: 0px 3px; border-radius: 8px; background-color: gradient(linear, 0% 0%, 0% 100%, from(#ff6a6a), to(#c01818)); border: 1px solid #ffb0b0; }
-.Life.LifeLost { background-color: #2a2a2a; border: 1px solid #555555; }
-#NextBoss { font-size: 14px; color: #8fa8d0; horizontal-align: right; vertical-align: center; margin-left: 24px; }
-#NextWaveButton { horizontal-align: center; margin-top: 8px; padding: 6px 16px; background-color: #28613d; border: 1px solid #7dff9a; border-radius: 4px; }
-#NextWaveButton:hover { background-color: #368554; }
-#NextWaveButton Label { color: white; font-size: 16px; font-weight: bold; }
+#WaveNum {
+    font-family: 'Gibson', 'Arial';
+    font-size: 44px;
+    font-weight: bold;
+    color: #f9fafb;
+    text-shadow: 0 0 18px rgba(255,255,255,0.18);
+    vertical-align: bottom;
+}
 
-#TalentTabButton { horizontal-align: right; vertical-align: top; margin-top: 130px; margin-right: 12px; padding: 6px 16px; background-color: #2a3b55; border: 1px solid #8fd3ff; border-radius: 4px; }
-#TalentTabButton:hover { background-color: #3d5680; }
-#TalentTabButton Label { color: white; font-size: 16px; font-weight: bold; }
-#TalentBox { horizontal-align: right; vertical-align: top; margin-top: 170px; margin-right: 12px; width: 430px; height: 78%; padding: 10px; flow-children: down; background-color: #000000dd; border-radius: 8px; }
-#TalentTitle { color: #8fd3ff; font-size: 22px; font-weight: bold; horizontal-align: center; margin-bottom: 5px; }
-#TalentScroll { width: 100%; height: 72%; overflow: squish scroll; }
-#TalentCards { width: 100%; flow-children: down; }
-.TalentRow { width: 100%; margin-top: 5px; flow-children: down; }
-.TalentLevel { color: #ffd24a; font-size: 15px; margin-bottom: 2px; }
-.TalentCard { width: 100%; min-height: 32px; margin: 2px 0px; padding: 5px; background-color: #263750; border: 1px solid #566d8a; border-radius: 4px; }
-.TalentCard:hover { background-color: #38527a; }
-.TalentCard Label { color: #e8efff; font-size: 14px; white-space: normal; }
-.TalentCard.TalentSelected { border: 1px solid #7dff9a; background-color: #244331; }
-.TalentCard.TalentUnavailable { opacity: 0.45; }
-#PointsLabel { font-size: 18px; color: #7dff9a; margin-top: 8px; margin-bottom: 5px; }
-.StatRow { flow-children: down; }
+#WaveFinal {
+    font-family: 'Gibson', 'Arial';
+    font-size: 19px;
+    color: #93a8c4;
+    margin-left: 6px;
+    vertical-align: bottom;
+    margin-bottom: 6px;
+}
+
+#WaveTag {
+    font-family: 'Gibson', 'Arial';
+    font-size: 12px;
+    color: #ffcb74;
+    font-weight: bold;
+    vertical-align: center;
+    margin-left: 14px;
+    padding: 4px 10px;
+    background-color: rgba(18, 11, 1, 0.6);
+    border: 1px solid rgba(255, 186, 84, 0.45);
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#WaveBox.Boss #WaveTag {
+    color: #ffc1c1;
+    border-color: rgba(255, 120, 120, 0.5);
+}
+
+#WaveInfo {
+    font-family: 'Gibson', 'Arial';
+    font-size: 18px;
+    color: #f7d589;
+    horizontal-align: center;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 12px rgba(255, 191, 74, 0.25);
+}
+
+#WaveBox.Break #WaveInfo {
+    color: #a4ffd0;
+    text-shadow: 0 0 12px rgba(80, 255, 150, 0.2);
+}
+
+#BarBg {
+    width: 100%;
+    height: 12px;
+    margin-top: 2px;
+    background-color: rgba(8, 10, 16, 0.9);
+    border-radius: 999px;
+    border: 1px solid rgba(94, 120, 176, 0.35);
+    overflow: clip;
+}
+
+#BarFill {
+    width: 0%;
+    height: 100%;
+    border-radius: 999px;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#ffbf62), to(#ff7a59));
+    box-shadow: inset 0 0 12px rgba(255,255,255,0.18);
+    transition-property: width;
+    transition-duration: 0.35s;
+}
+
+#WaveBox.Boss #BarFill {
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#ff6969), to(#8f1f2a));
+}
+
+#WaveBox.Break #BarFill {
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#66f0b0), to(#26a870));
+}
+
+#GameBarBg {
+    width: 100%;
+    height: 5px;
+    margin-top: 8px;
+    background-color: rgba(10, 14, 22, 0.9);
+    border-radius: 999px;
+    overflow: clip;
+}
+
+#GameBarFill {
+    width: 0%;
+    height: 100%;
+    border-radius: 999px;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#76d0ff), to(#4a7ef3));
+    box-shadow: 0 0 16px rgba(110, 180, 255, 0.5);
+    transition-property: width;
+    transition-duration: 0.5s;
+}
+
+#WaveFooter {
+    width: 100%;
+    margin-top: 10px;
+    flow-children: right;
+    vertical-align: center;
+}
+
+#LivesCaption {
+    font-family: 'Gibson', 'Arial';
+    font-size: 11px;
+    color: #d0dcff;
+    vertical-align: center;
+    margin-right: 8px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
+#LivesRow {
+    flow-children: right;
+    vertical-align: center;
+}
+
+.Life {
+    width: 14px;
+    height: 14px;
+    margin: 0px 3px;
+    border-radius: 50%;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#ff7d7d), to(#c91b1b));
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 0 12px rgba(255, 80, 80, 0.3);
+}
+
+.Life.LifeLost {
+    background-color: rgba(42, 46, 58, 0.9);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: none;
+}
+
+#NextBoss {
+    font-family: 'Gibson', 'Arial';
+    font-size: 12px;
+    color: #aabfe8;
+    horizontal-align: right;
+    vertical-align: center;
+    margin-left: 18px;
+}
+
+#NextWaveButton {
+    horizontal-align: center;
+    margin-top: 12px;
+    padding: 8px 18px;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#1d7f68), to(#0f5a4f));
+    border: 1px solid rgba(148, 255, 214, 0.72);
+    border-radius: 10px;
+    box-shadow: 0 0 18px rgba(78, 255, 175, 0.18);
+}
+
+#NextWaveButton:hover {
+    brightness: 1.15;
+    box-shadow: 0 0 24px rgba(94, 255, 184, 0.28);
+}
+
+#NextWaveButton Label {
+    font-family: 'Gibson', 'Arial';
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+}
+
+#HeroSidebar {
+    position: absolute;
+    right: 24px;
+    top: 130px;
+    width: 420px;
+    height: 72%;
+    padding: 16px 16px 14px 16px;
+    flow-children: down;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#0d1422ee), to(#0a101dff));
+    border: 1px solid rgba(131, 174, 255, 0.24);
+    border-radius: 18px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 18px 24px rgba(0,0,0,0.5);
+}
+
+#HeroHeader {
+    width: 100%;
+    height: 86px;
+    flow-children: right;
+    padding: 0px 4px 8px 4px;
+    border-bottom: 1px solid rgba(163, 180, 214, 0.16);
+    margin-bottom: 12px;
+}
+
+#HeroPortrait {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#253c67), to(#121d33));
+    border: 1px solid rgba(170, 211, 255, 0.35);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 0 20px rgba(83, 129, 255, 0.2);
+}
+
+#HeroMeta {
+    width: fill-parent-flow(1);
+    margin-left: 12px;
+    flow-children: down;
+    vertical-align: center;
+}
+
+#HeroName {
+    font-family: 'Gibson', 'Arial';
+    font-size: 23px;
+    color: #f4f8ff;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+    text-shadow: 0 0 18px rgba(126, 175, 255, 0.25);
+}
+
+#HeroClass {
+    font-family: 'Gibson', 'Arial';
+    font-size: 12px;
+    color: #9ae0ff;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+#HeroLevel {
+    font-family: 'Gibson', 'Arial';
+    font-size: 12px;
+    color: #ffd58a;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-top: 2px;
+}
+
+#SidebarTabs {
+    width: 100%;
+    flow-children: right;
+    margin-bottom: 12px;
+    padding: 4px;
+    background-color: rgba(15, 20, 30, 0.6);
+    border: 1px solid rgba(142, 166, 211, 0.14);
+    border-radius: 12px;
+}
+
+.TabBtn {
+    width: fill-parent-flow(1);
+    min-height: 28px;
+    margin: 0px 3px;
+    padding: 6px 8px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition-property: background-color, border, brightness;
+    transition-duration: 0.18s;
+}
+
+.TabBtn:hover {
+    background-color: rgba(118, 154, 255, 0.08);
+    border: 1px solid rgba(118, 154, 255, 0.2);
+}
+
+.TabBtn.active {
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#1f2d52), to(#17253d));
+    border: 1px solid rgba(127, 193, 255, 0.45);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.09);
+}
+
+.TabBtn Label {
+    font-family: 'Gibson', 'Arial';
+    font-size: 11px;
+    font-weight: bold;
+    color: #dce9ff;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    horizontal-align: center;
+    vertical-align: center;
+}
+
+#HeroPanels {
+    width: 100%;
+    height: fill-parent-flow(1);
+    flow-children: down;
+}
+
+.SidebarPanel {
+    width: 100%;
+    height: fill-parent-flow(1);
+    flow-children: down;
+    padding: 10px 4px 0px 4px;
+}
+
+.SidebarPanel.active {
+    visibility: visible;
+}
+
+.SectionTitle {
+    font-family: 'Gibson', 'Arial';
+    font-size: 18px;
+    font-weight: bold;
+    color: #f3d08d;
+    margin-bottom: 12px;
+    text-shadow: 0 0 18px rgba(255, 199, 101, 0.2);
+}
+
+#StatGrid {
+    width: 100%;
+    flow-children: down;
+}
+
+.StatCard {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    flow-children: down;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#111c2b), to(#0c1420));
+    border: 1px solid rgba(136, 170, 230, 0.22);
+    border-radius: 12px;
+}
+
+.StatName {
+    font-family: 'Gibson', 'Arial';
+    font-size: 12px;
+    color: #cfe3ff;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.StatBar {
+    width: 100%;
+    height: 9px;
+    margin-top: 8px;
+    background-color: rgba(4,7,12,0.7);
+    border-radius: 999px;
+    overflow: clip;
+    border: 1px solid rgba(131, 161, 211, 0.15);
+}
+
+.StatFill {
+    width: 40%;
+    height: 100%;
+    border-radius: 999px;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#7cc7ff), to(#3d7cff));
+}
+
+.StatFill.damage { background-color: gradient(linear, 0% 0%, 100% 0%, from(#ffcb73), to(#ff8b56)); }
+.StatFill.speed { background-color: gradient(linear, 0% 0%, 100% 0%, from(#7de2ff), to(#21b6c9)); }
+.StatFill.attack { background-color: gradient(linear, 0% 0%, 100% 0%, from(#b29cff), to(#7a5cf6)); }
+.StatFill.hp { background-color: gradient(linear, 0% 0%, 100% 0%, from(#8ceeb3), to(#30c67c)); }
+
+.StatValue {
+    font-family: 'Gibson', 'Arial';
+    font-size: 12px;
+    font-weight: bold;
+    color: #f7f9ff;
+    margin-top: 8px;
+    horizontal-align: right;
+}
+
+#TalentScroll {
+    width: 100%;
+    height: fill-parent-flow(1);
+    overflow: squish scroll;
+    margin-bottom: 8px;
+}
+
+#TalentCards {
+    width: 100%;
+    flow-children: down;
+}
+
+.TalentRow {
+    width: 100%;
+    margin-bottom: 10px;
+    flow-children: down;
+}
+
+.TalentLevel {
+    font-family: 'Gibson', 'Arial';
+    font-size: 12px;
+    color: #ffd88d;
+    font-weight: bold;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.TalentCard {
+    width: 100%;
+    min-height: 34px;
+    margin: 2px 0px;
+    padding: 8px 10px;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#182339), to(#101b2f));
+    border: 1px solid rgba(144, 170, 222, 0.24);
+    border-radius: 10px;
+    transition-property: border, background-color, brightness;
+    transition-duration: 0.15s;
+}
+
+.TalentCard:hover {
+    brightness: 1.12;
+    border: 1px solid rgba(120, 174, 255, 0.4);
+}
+
+.TalentCard.TalentSelected {
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#163d2f), to(#0d251f));
+    border: 1px solid rgba(123, 255, 174, 0.7);
+}
+
+.TalentCard.TalentUnavailable {
+    opacity: 0.42;
+}
+
+.TalentCard Label {
+    font-family: 'Gibson', 'Arial';
+    font-size: 12px;
+    color: #f0f5ff;
+    white-space: normal;
+}
+
+#PointsLabel {
+    font-family: 'Gibson', 'Arial';
+    font-size: 14px;
+    color: #a4ffc7;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.StatRow {
+    width: 100%;
+    flow-children: down;
+}
+
 .StatBtn {
-	margin: 2px 0px; padding: 4px 14px;
-	background-color: #2a3b55; border-radius: 4px;
+    width: 100%;
+    margin: 5px 0px;
+    padding: 8px 10px;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#20314d), to(#162235));
+    border: 1px solid rgba(120, 159, 233, 0.28);
+    border-radius: 10px;
 }
-.StatBtn:hover { background-color: #3d5680; }
-.StatBtn Label { font-size: 16px; color: #ffffff; }
 
-#PerkBox {
-	horizontal-align: center; vertical-align: center;
-	flow-children: down; padding: 16px;
-	background-color: #000000dd; border-radius: 10px;
+.StatBtn:hover {
+    brightness: 1.12;
 }
-#PerkTitle { font-size: 28px; color: #ffffff; horizontal-align: center; margin-bottom: 12px; }
-#PerkCards { flow-children: right; }
+
+.StatBtn Label {
+    font-family: 'Gibson', 'Arial';
+    font-size: 13px;
+    color: #edf6ff;
+    font-weight: bold;
+}
+
+#PerkCards {
+    width: 100%;
+    flow-children: down;
+}
+
 .PerkCard {
-	width: 220px; margin: 0px 8px; padding: 14px;
-	flow-children: down;
-	background-color: #1c2740; border: 2px solid #4a90e2; border-radius: 8px;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    padding: 12px 12px 10px 12px;
+    flow-children: down;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#172135), to(#0e1524));
+    border: 1px solid rgba(131, 160, 240, 0.25);
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
 }
-.PerkCard:hover { background-color: #2c3d63; border: 2px solid #ffd24a; }
-.PerkName  { font-size: 22px; color: #ffd24a; font-weight: bold; margin-bottom: 6px; }
-.PerkDesc  { font-size: 17px; color: #e0e0e0; width: 100%; text-overflow: shrink; white-space: normal; }
-.PerkCount { font-size: 14px; color: #8fd3ff; margin-top: 8px; }
+
+.PerkCard:hover {
+    brightness: 1.08;
+}
+
+.PerkCard.Rarity1 { border-color: rgba(189, 196, 204, 0.6); }
+.PerkCard.Rarity2 { border-color: rgba(89, 153, 255, 0.7); }
+.PerkCard.Rarity3 { border-color: rgba(178, 98, 255, 0.8); }
+.PerkCard.Rarity4 { border-color: rgba(255, 168, 68, 0.8); }
+.PerkCard.Rarity5 { border-color: rgba(255, 93, 126, 0.9); }
+
+.PerkName {
+    font-family: 'Gibson', 'Arial';
+    font-size: 20px;
+    color: #ffeaa7;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.PerkRarity {
+    font-family: 'Gibson', 'Arial';
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.PerkBuild {
+    font-family: 'Gibson', 'Arial';
+    font-size: 11px;
+    color: #ffb3c8;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+}
+
+.PerkDesc {
+    font-family: 'Gibson', 'Arial';
+    font-size: 12px;
+    color: #dfeafc;
+    width: 100%;
+    white-space: normal;
+    line-height: 16px;
+}
+
+.PerkCount {
+    font-family: 'Gibson', 'Arial';
+    font-size: 11px;
+    color: #a4d6ff;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+#GearList, #TotalsList {
+    width: 100%;
+    flow-children: down;
+}
+
+.GearName {
+    font-family: 'Gibson', 'Arial';
+    font-size: 14px;
+    color: #f4fbff;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.GearLines {
+    font-family: 'Gibson', 'Arial';
+    font-size: 12px;
+    color: #d9e6ff;
+    width: 100%;
+    white-space: normal;
+    line-height: 15px;
+    margin-top: 2px;
+}
+
+#TotalsTitle {
+    font-family: 'Gibson', 'Arial';
+    font-size: 14px;
+    color: #a8f5c6;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+.TotalLine {
+    font-family: 'Gibson', 'Arial';
+    font-size: 12px;
+    color: #ecf9ee;
+    margin-top: 4px;
+}
+
+#QuickPanel {
+    position: absolute;
+    left: 24px;
+    bottom: 26px;
+    width: 220px;
+    padding: 12px 12px 10px 12px;
+    flow-children: down;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#0d1422ee), to(#0a101dff));
+    border: 1px solid rgba(139, 172, 255, 0.24);
+    border-radius: 16px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 10px 22px rgba(0,0,0,0.38);
+}
+
+#QuickTitle {
+    font-family: 'Gibson', 'Arial';
+    font-size: 12px;
+    color: #bfd3ff;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+#QuickStats {
+    width: 100%;
+    flow-children: down;
+}
+
+.QuickMetric {
+    width: 100%;
+    height: 24px;
+    margin-top: 4px;
+    flow-children: right;
+    vertical-align: center;
+    background-color: rgba(16, 23, 32, 0.6);
+    border: 1px solid rgba(143, 163, 214, 0.14);
+    border-radius: 8px;
+}
+
+.QuickMetricLabel {
+    font-family: 'Gibson', 'Arial';
+    font-size: 11px;
+    color: #b9c9e8;
+    margin-left: 8px;
+    vertical-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.QuickMetricValue {
+    font-family: 'Gibson', 'Arial';
+    font-size: 12px;
+    color: #f8fbff;
+    font-weight: bold;
+    horizontal-align: right;
+    margin-right: 8px;
+    vertical-align: center;
+}
 
 #ToastBox {
-	horizontal-align: center; vertical-align: bottom;
-	margin-bottom: 260px; flow-children: down;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 220px;
+    flow-children: down;
 }
-.Toast { font-size: 20px; color: #ffffff; horizontal-align: center; text-shadow: 0px 0px 4px 3.0 #000000; margin-top: 2px; }
 
-/* Редкости перков */
-.PerkCard.Rarity1 { border: 2px solid #b8b8b8; }
-.PerkCard.Rarity2 { border: 2px solid #4a90e2; }
-.PerkCard.Rarity3 { border: 2px solid #b050e0; }
-.PerkCard.Rarity4 { border: 2px solid #ff9a1e; }
-.PerkCard.Rarity5 { border: 3px solid #ff3d6e; background-color: #2a1428; }
-.PerkCard:hover { background-color: #2c3d63; }
-.PerkRarity { font-size: 14px; font-weight: bold; margin-bottom: 2px; }
-.PerkBuild  { font-size: 15px; color: #ff9fb8; margin-bottom: 4px; }
-
-/* Панель «Снаряжение» */
-#GearBox {
-	horizontal-align: left; vertical-align: top;
-	margin-top: 130px; margin-left: 12px; padding: 8px 10px;
-	width: 300px; flow-children: down;
-	background-color: #000000b0; border-radius: 8px;
+.Toast {
+    font-family: 'Gibson', 'Arial';
+    font-size: 16px;
+    color: #ffffff;
+    horizontal-align: center;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    margin-top: 4px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background-color: rgba(8, 12, 18, 0.7);
+    border: 1px solid rgba(157, 183, 247, 0.18);
 }
-#GearTitle, #TotalsTitle { font-size: 18px; color: #ffffff; font-weight: bold; margin-bottom: 4px; }
-#TotalsTitle { margin-top: 8px; color: #7dff9a; }
-#GearList, #TotalsList { flow-children: down; width: 100%; }
-.GearName  { font-size: 16px; font-weight: bold; margin-top: 4px; }
-.GearLines { font-size: 13px; color: #d8d8d8; width: 100%; text-overflow: shrink; white-space: normal; }
-.TotalLine { font-size: 14px; color: #e8f5e8; }
